@@ -1,0 +1,771 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="Sekar Jagad — Lembaga Pendidikan Ilmu Spiritual & Olah Raga Pernapasan. Profil lembaga, pengurus pusat, pelatihan, agenda, galeri, konsultasi, dan pendaftaran anggota." />
+    <link rel="icon" href="data:," />
+    <title>Sekar Jagad — Lembaga Pendidikan Ilmu Spiritual &amp; Olah Raga Pernapasan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <style>
+      button, [role="button"], select, summary, input:not([type="checkbox"], [type="radio"]) { min-height: 2rem; }
+
+      :root {
+        --maroon-950: #2b060a;
+        --maroon-900: #43090f;
+        --maroon-800: #5c1016;
+        --maroon-700: #741a21;
+        --gold-500: #c9a227;
+        --gold-400: #dcb84a;
+        --gold-100: #f3e5bb;
+        --bg: #f6f1e7;
+        --surface: #fffdf8;
+        --surface-2: #efe7d7;
+        --ink: #26191a;
+        --ink-soft: #5d4c4c;
+        --line: #ddd0ba;
+        --accent: #741a21;
+        --accent-ink: #ffffff;
+        --wa: #1faa55;
+        --shadow: 0 10px 30px rgba(43, 6, 10, 0.14);
+        color-scheme: light;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #170d0e;
+          --surface: #221416;
+          --surface-2: #2c1a1d;
+          --ink: #f2e7dc;
+          --ink-soft: #c8b3a8;
+          --line: #472c2c;
+          --accent: #c05a5a;
+          --accent-ink: #ffffff;
+          --gold-100: #4a3a14;
+          --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+          color-scheme: dark;
+        }
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.65;
+        font-size: 17px;
+      }
+      img { max-width: 100%; display: block; }
+      a { color: var(--accent); }
+      h1, h2, h3, .display { font-family: "Marcellus", Georgia, serif; font-weight: 400; line-height: 1.25; margin: 0; }
+      .wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+
+      /* ---------- Top utility bar ---------- */
+      .topbar {
+        background: var(--maroon-950);
+        color: #e9d9c8;
+        font-size: 0.85rem;
+      }
+      .topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 38px; padding-top: 4px; padding-bottom: 4px; }
+      .topbar a { color: #e9d9c8; text-decoration: none; }
+      .topbar a:hover { color: var(--gold-400); }
+      .topbar .contacts { display: flex; gap: 20px; flex-wrap: wrap; }
+      .topbar .contacts span { display: inline-flex; align-items: center; gap: 6px; }
+      .socials { display: flex; gap: 4px; }
+      .socials a { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; }
+      .socials a:hover { background: rgba(255,255,255,0.12); }
+      .socials svg { width: 16px; height: 16px; fill: currentColor; }
+      @media (max-width: 640px) { .topbar .contacts .hide-sm { display: none; } }
+
+      /* ---------- Masthead ---------- */
+      .masthead {
+        background: linear-gradient(180deg, var(--maroon-900), var(--maroon-800));
+        color: #f7ecd9;
+        border-bottom: 3px solid var(--gold-500);
+      }
+      .masthead .wrap { display: flex; align-items: center; gap: 20px; padding-top: 20px; padding-bottom: 20px; }
+      .masthead .logo { width: 92px; height: 92px; border-radius: 50%; flex: none; box-shadow: 0 4px 18px rgba(0,0,0,0.35); }
+      .masthead h1 { font-size: clamp(1.9rem, 4.5vw, 3rem); letter-spacing: 0.14em; color: #fff; }
+      .masthead .tagline { margin: 2px 0 0; font-size: clamp(0.85rem, 2vw, 1.02rem); letter-spacing: 0.04em; color: var(--gold-100); }
+      .masthead .cta-daftar {
+        margin-left: auto; flex: none;
+        background: var(--gold-500); color: #2b060a;
+        font-weight: 700; text-decoration: none;
+        padding: 12px 22px; border-radius: 6px; min-height: 44px;
+        display: inline-flex; align-items: center;
+      }
+      .masthead .cta-daftar:hover { background: var(--gold-400); }
+      @media (max-width: 720px) {
+        .masthead .wrap { flex-wrap: wrap; }
+        .masthead .logo { width: 68px; height: 68px; }
+        .masthead .cta-daftar { margin-left: 0; }
+      }
+
+      /* ---------- Nav ---------- */
+      .navbar {
+        position: sticky; top: 0; z-index: 50;
+        background: var(--surface);
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 2px 10px rgba(43,6,10,0.06);
+      }
+      .navbar .wrap { display: flex; align-items: center; }
+      .nav-links { display: flex; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
+      .nav-links a {
+        display: inline-flex; align-items: center; min-height: 48px;
+        padding: 0 15px; text-decoration: none; color: var(--ink);
+        font-weight: 600; font-size: 0.97rem;
+        border-bottom: 3px solid transparent;
+      }
+      .nav-links a:hover { color: var(--accent); }
+      .nav-links a.active { color: var(--accent); border-bottom-color: var(--gold-500); }
+      .nav-toggle {
+        display: none; margin-left: auto; background: none; border: 1px solid var(--line);
+        border-radius: 6px; width: 44px; height: 44px; cursor: pointer; color: var(--ink);
+        align-items: center; justify-content: center;
+      }
+      .nav-toggle svg { width: 22px; height: 22px; }
+      @media (max-width: 900px) {
+        .nav-toggle { display: inline-flex; }
+        .nav-links { display: none; flex-direction: column; width: 100%; padding: 8px 0 12px; }
+        .navbar.open .nav-links { display: flex; }
+        .navbar .wrap { flex-wrap: wrap; }
+        .nav-links a { width: 100%; border-bottom: none; border-left: 3px solid transparent; }
+        .nav-links a.active { border-left-color: var(--gold-500); }
+      }
+
+      /* ---------- Hero ---------- */
+      .hero { position: relative; color: #fff; }
+      .hero img.hero-bg { width: 100%; height: min(560px, 62vh); object-fit: cover; }
+      .hero .shade {
+        position: absolute; inset: 0;
+        background: linear-gradient(90deg, rgba(30,4,7,0.82) 0%, rgba(30,4,7,0.55) 48%, rgba(30,4,7,0.15) 100%);
+        display: flex; align-items: center;
+      }
+      .hero .hero-inner { max-width: 640px; }
+      .hero .lembaga { letter-spacing: 0.22em; font-size: 0.82rem; font-weight: 700; color: var(--gold-400); text-transform: uppercase; margin: 0 0 10px; }
+      .hero h2 { font-size: clamp(1.7rem, 4.2vw, 2.9rem); color: #fff; }
+      .hero p.lead { font-size: clamp(1rem, 2vw, 1.15rem); color: #f3e8d7; margin: 14px 0 24px; }
+      .hero .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+      .btn {
+        display: inline-flex; align-items: center; gap: 8px; min-height: 46px;
+        padding: 11px 24px; border-radius: 6px; font-weight: 700; text-decoration: none;
+        border: 2px solid transparent; cursor: pointer; font-size: 1rem; font-family: inherit;
+      }
+      .btn-gold { background: var(--gold-500); color: #2b060a; }
+      .btn-gold:hover { background: var(--gold-400); }
+      .btn-ghost { border-color: rgba(255,255,255,0.75); color: #fff; background: rgba(0,0,0,0.15); }
+      .btn-ghost:hover { background: rgba(255,255,255,0.14); }
+      .btn-maroon { background: var(--maroon-800); color: #fff; }
+      .btn-maroon:hover { background: var(--maroon-700); }
+      @media (prefers-color-scheme: dark) { .btn-maroon { background: #8c2f36; } }
+
+      /* ---------- Layout: content + sidebar ---------- */
+      .layout { display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 36px; padding: 44px 0 8px; }
+      @media (max-width: 960px) { .layout { grid-template-columns: 1fr; } }
+      section { scroll-margin-top: 84px; }
+      .section-head { margin-bottom: 20px; }
+      .section-head h2 { font-size: clamp(1.45rem, 3vw, 2rem); color: var(--ink); }
+      .section-head .rule { width: 72px; height: 3px; background: var(--gold-500); margin-top: 10px; }
+      .section-head.center { text-align: center; }
+      .section-head.center .rule { margin-left: auto; margin-right: auto; }
+
+      .about-grid { display: grid; grid-template-columns: 250px 1fr; gap: 26px; align-items: start; }
+      @media (max-width: 640px) { .about-grid { grid-template-columns: 1fr; } .about-grid .emblem { max-width: 200px; margin: 0 auto; } }
+      .about-grid .emblem { border-radius: 10px; box-shadow: var(--shadow); }
+      .about-grid p { margin: 0 0 14px; color: var(--ink-soft); }
+      .about-grid p strong { color: var(--ink); }
+
+      .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 30px 0 6px; }
+      @media (max-width: 640px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+      .stat { background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--gold-500); border-radius: 8px; padding: 16px 12px; text-align: center; }
+      .stat .num { font-family: "Marcellus", serif; font-size: 1.8rem; color: var(--accent); display: block; }
+      .stat .lbl { font-size: 0.88rem; color: var(--ink-soft); }
+
+      .tujuan { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+      .tujuan li { display: flex; gap: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 13px 16px; }
+      .tujuan .ic { flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--gold-100); color: var(--maroon-800); display: inline-flex; align-items: center; justify-content: center; margin-top: 2px; }
+      @media (prefers-color-scheme: dark) { .tujuan .ic { color: var(--gold-400); } }
+      .tujuan .ic svg { width: 14px; height: 14px; }
+
+      /* Sidebar */
+      .side-card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; margin-bottom: 26px; box-shadow: var(--shadow); }
+      .side-card > h3 { background: var(--maroon-800); color: #fff; font-size: 1.05rem; padding: 12px 18px; letter-spacing: 0.03em; }
+      .news-list { list-style: none; margin: 0; padding: 8px 0; }
+      .news-list li { border-bottom: 1px solid var(--line); }
+      .news-list li:last-child { border-bottom: none; }
+      .news-list a { display: flex; gap: 12px; padding: 10px 16px; text-decoration: none; color: var(--ink); align-items: center; min-height: 44px; }
+      .news-list a:hover { background: var(--surface-2); }
+      .news-list img { width: 54px; height: 54px; object-fit: cover; border-radius: 6px; flex: none; }
+      .news-list .t { font-weight: 600; font-size: 0.94rem; line-height: 1.35; display: block; }
+      .news-list .d { font-size: 0.8rem; color: var(--ink-soft); }
+      .side-body { padding: 16px 18px; color: var(--ink-soft); font-size: 0.95rem; }
+      .side-body p { margin: 0 0 10px; }
+
+      /* ---------- Tokoh ---------- */
+      .band { background: var(--surface-2); padding: 52px 0; margin-top: 44px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      .tokoh-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+      @media (max-width: 960px) { .tokoh-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 460px) { .tokoh-grid { grid-template-columns: 1fr; } }
+      .tokoh { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); }
+      .tokoh img { width: 100%; aspect-ratio: 3 / 3.4; object-fit: cover; object-position: top; }
+      .tokoh .meta { padding: 14px 16px 16px; text-align: center; }
+      .tokoh .name { font-family: "Marcellus", serif; font-size: 1.08rem; display: block; }
+      .tokoh .role { color: var(--accent); font-weight: 700; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+      /* ---------- Pelatihan ---------- */
+      .jenjang { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+      @media (max-width: 900px) { .jenjang { grid-template-columns: 1fr; } }
+      .jenjang .card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 24px; box-shadow: var(--shadow); }
+      .jenjang .card h3 { font-size: 1.25rem; margin-bottom: 4px; }
+      .jenjang .card .tingkat { color: var(--gold-500); font-weight: 700; letter-spacing: 0.14em; font-size: 0.78rem; text-transform: uppercase; }
+      .jenjang .card p { color: var(--ink-soft); margin: 10px 0; }
+      .jenjang ul { margin: 0; padding-left: 18px; color: var(--ink-soft); }
+      .jadwal { width: 100%; border-collapse: collapse; margin-top: 26px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+      .jadwal caption { text-align: left; font-family: "Marcellus", serif; font-size: 1.15rem; padding: 4px 0 12px; }
+      .jadwal th, .jadwal td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+      .jadwal th { background: var(--maroon-800); color: #fff; font-weight: 600; }
+      .jadwal tr:last-child td { border-bottom: none; }
+      @media (max-width: 560px) {
+        .jadwal, .jadwal tbody, .jadwal tr, .jadwal td { display: block; width: 100%; }
+        .jadwal thead { display: none; }
+        .jadwal tr { border-bottom: 1px solid var(--line); padding: 8px 0; }
+        .jadwal td { border-bottom: none; padding: 4px 16px; }
+        .jadwal td:first-child { font-weight: 700; }
+      }
+
+      /* ---------- Agenda ---------- */
+      .agenda-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+      @media (max-width: 900px) { .agenda-grid { grid-template-columns: 1fr; } }
+      .agenda-card { display: flex; gap: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 20px; box-shadow: var(--shadow); }
+      .agenda-card .date { flex: none; width: 68px; text-align: center; background: var(--maroon-800); color: #fff; border-radius: 8px; padding: 10px 4px; height: fit-content; }
+      .agenda-card .date .day { font-family: "Marcellus", serif; font-size: 1.7rem; display: block; line-height: 1; }
+      .agenda-card .date .mon { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-400); }
+      .agenda-card h3 { font-size: 1.12rem; margin-bottom: 6px; }
+      .agenda-card p { margin: 0; color: var(--ink-soft); font-size: 0.94rem; }
+
+      /* ---------- Gallery ---------- */
+      .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+      @media (max-width: 760px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
+      .gallery figure { margin: 0; border-radius: 10px; overflow: hidden; position: relative; cursor: zoom-in; box-shadow: var(--shadow); }
+      .gallery img { width: 100%; height: 220px; object-fit: cover; transition: transform 0.4s ease; }
+      .gallery figure:hover img { transform: scale(1.04); }
+      .gallery figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 22px 14px 10px; color: #fff; font-size: 0.88rem; font-weight: 600; background: linear-gradient(transparent, rgba(20,3,5,0.78)); }
+      @media (prefers-reduced-motion: reduce) { .gallery img { transition: none; } html { scroll-behavior: auto; } }
+
+      /* Lightbox */
+      .lightbox { position: fixed; inset: 0; z-index: 100; background: rgba(15,3,4,0.92); display: none; align-items: center; justify-content: center; padding: 20px; }
+      .lightbox.open { display: flex; }
+      .lightbox img { max-width: min(1000px, 100%); max-height: 82vh; border-radius: 8px; }
+      .lightbox .cap { position: absolute; bottom: 26px; left: 0; right: 0; text-align: center; color: #f3e8d7; padding: 0 20px; }
+      .lightbox button { position: absolute; top: 16px; right: 16px; width: 46px; height: 46px; border-radius: 50%; border: none; background: rgba(255,255,255,0.14); color: #fff; font-size: 1.3rem; cursor: pointer; }
+
+      /* ---------- Konsultasi / form ---------- */
+      .konsul { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; }
+      @media (max-width: 860px) { .konsul { grid-template-columns: 1fr; } }
+      .konsul .info p { color: var(--ink-soft); }
+      .kontak-list { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 12px; }
+      .kontak-list li { display: flex; gap: 12px; align-items: flex-start; }
+      .kontak-list .ic { flex: none; width: 38px; height: 38px; border-radius: 8px; background: var(--gold-100); color: var(--maroon-800); display: inline-flex; align-items: center; justify-content: center; }
+      @media (prefers-color-scheme: dark) { .kontak-list .ic { color: var(--gold-400); } }
+      .kontak-list svg { width: 18px; height: 18px; }
+      form.daftar { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 24px; box-shadow: var(--shadow); }
+      form.daftar label { display: block; font-weight: 600; font-size: 0.92rem; margin: 0 0 6px; }
+      form.daftar .field { margin-bottom: 16px; }
+      form.daftar input, form.daftar select, form.daftar textarea {
+        width: 100%; padding: 11px 13px; border: 1px solid var(--line); border-radius: 6px;
+        background: var(--bg); color: var(--ink); font: inherit; min-height: 46px;
+      }
+      form.daftar textarea { min-height: 96px; resize: vertical; }
+      form.daftar input:focus, form.daftar select:focus, form.daftar textarea:focus { outline: 2px solid var(--gold-500); outline-offset: 1px; }
+      .form-note { font-size: 0.86rem; color: var(--ink-soft); margin-top: 12px; }
+
+      /* ---------- Footer ---------- */
+      footer { background: var(--maroon-950); color: #d9c6ae; margin-top: 56px; }
+      footer .cols { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 30px; padding: 44px 0 30px; }
+      @media (max-width: 760px) { footer .cols { grid-template-columns: 1fr; } }
+      footer h3 { color: #fff; font-size: 1.1rem; margin-bottom: 12px; }
+      footer a { color: #d9c6ae; text-decoration: none; }
+      footer a:hover { color: var(--gold-400); }
+      footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+      footer ul a { display: inline-flex; min-height: 32px; align-items: center; }
+      footer .bottom { border-top: 1px solid rgba(255,255,255,0.14); padding: 16px 0 20px; font-size: 0.88rem; display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+
+      /* ---------- WhatsApp float ---------- */
+      .wa-float {
+        position: fixed; right: 18px; bottom: 18px; z-index: 90;
+        display: inline-flex; align-items: center; gap: 9px;
+        background: var(--wa); color: #fff; text-decoration: none; font-weight: 700;
+        padding: 12px 18px; min-height: 48px; border-radius: 999px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      }
+      .wa-float svg { width: 22px; height: 22px; fill: currentColor; }
+      .wa-float:hover { filter: brightness(1.07); }
+      @media (max-width: 640px) {
+        .wa-float { padding: 13px; border-radius: 50%; }
+        .wa-float .wa-text { display: none; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Bar atas -->
+    <div class="topbar">
+      <div class="wrap">
+        <div class="contacts">
+          <span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            0812-3456-7890
+          </span>
+          <span class="hide-sm">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            sekretariat@sekarjagad.or.id
+          </span>
+          <span class="hide-sm">Padepokan Pusat: Yogyakarta</span>
+        </div>
+        <div class="socials">
+          <a href="#" aria-label="Facebook Sekar Jagad"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="Instagram Sekar Jagad"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.35 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.06 1.17-.25 1.8-.41 2.23a3.7 3.7 0 0 1-.9 1.38c-.42.42-.82.68-1.38.9-.42.16-1.06.35-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.35-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.06-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.35 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.9 5.9 0 0 0-2.13 1.38A5.9 5.9 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.8.72 1.47 1.38 2.13a5.9 5.9 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.9 5.9 0 0 0 2.13-1.38 5.9 5.9 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.15A4 4 0 1 1 16 12a4 4 0 0 1-4 3.99zm7.85-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg></a>
+          <a href="#" aria-label="YouTube Sekar Jagad"><svg viewBox="0 0 24 24"><path d="M23 7.2s-.22-1.55-.9-2.23c-.86-.9-1.82-.9-2.26-.96C16.7 3.75 12 3.75 12 3.75s-4.7 0-7.84.26c-.44.05-1.4.06-2.26.96C1.22 5.65 1 7.2 1 7.2S.75 9.02.75 10.84v1.7c0 1.82.25 3.64.25 3.64s.22 1.55.9 2.23c.86.9 2 .87 2.5 1 1.8.17 7.6.24 7.6.24s4.71-.01 7.85-.27c.44-.05 1.4-.06 2.26-.96.68-.68.9-2.23.9-2.23s.25-1.82.25-3.64v-1.7c0-1.82-.25-3.63-.25-3.63zM9.82 15.02V8.4l6.27 3.31-6.27 3.31z"/></svg></a>
+          <a href="#" aria-label="TikTok Sekar Jagad"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.28.02.55.08.8.17V9.4a6.33 6.33 0 0 0-1-.05A6.34 6.34 0 1 0 15.7 15.6V8.75a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-.88-.18z"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Masthead -->
+    <header class="masthead">
+      <div class="wrap">
+        <img class="logo" src="assets/img-523b3ff1ec.jpg" alt="Lambang Lembaga Sekar Jagad: bunga teratai dan keris berwarna emas" width="92" height="92" />
+        <div>
+          <h1>SEKAR JAGAD</h1>
+          <p class="tagline">Lembaga Pendidikan Ilmu Spiritual &amp; Olah Raga Pernapasan</p>
+        </div>
+        <a class="cta-daftar" href="#daftar">Daftar Jadi Anggota</a>
+      </div>
+    </header>
+
+    <!-- Navigasi -->
+    <nav class="navbar" id="navbar" aria-label="Menu utama">
+      <div class="wrap">
+        <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#profil">Profil</a></li>
+          <li><a href="#pengurus">Pengurus Pusat</a></li>
+          <li><a href="#pelatihan">Pelatihan</a></li>
+          <li><a href="#agenda">Agenda</a></li>
+          <li><a href="#galeri">Gallery</a></li>
+          <li><a href="#konsultasi">Konsultasi</a></li>
+          <li><a href="#daftar">Daftar Jadi Anggota</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <img class="hero-bg" src="assets/img-637dd2abd0.jpg" alt="Anggota Sekar Jagad bermeditasi bersama di halaman Candi Borobudur menjelang fajar" />
+      <div class="shade">
+        <div class="wrap">
+          <div class="hero-inner">
+            <p class="lembaga">Padepokan Sekar Jagad · Yogyakarta</p>
+            <h2>Menempa Batin, Mengolah Napas, Menjaga Budi Luhur</h2>
+            <p class="lead">Sekar Jagad membina generasi bangsa melalui pendidikan ilmu spiritual dan olah raga pernapasan — membentuk pribadi yang tangguh, sehat lahir batin, dan berbudi pekerti luhur.</p>
+            <div class="actions">
+              <a class="btn btn-gold" href="#profil">Kenali Sekar Jagad</a>
+              <a class="btn btn-ghost" href="#pelatihan">Lihat Pelatihan</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Konten utama + sidebar -->
+    <div class="wrap">
+      <div class="layout">
+        <div>
+          <!-- Profil -->
+          <section id="profil">
+            <div class="section-head">
+              <h2>Lembaga Pendidikan Ilmu Spiritual &amp; Olah Raga Pernapasan Sekar Jagad</h2>
+              <div class="rule"></div>
+            </div>
+            <div class="about-grid">
+              <img class="emblem" src="assets/img-523b3ff1ec.jpg" alt="Lambang resmi Lembaga Sekar Jagad" loading="lazy" />
+              <div>
+                <p><strong>Sekar Jagad</strong> adalah Lembaga Pendidikan Ilmu Spiritual dan Olah Raga Pernapasan yang sah dan berbadan hukum, terdaftar secara resmi serta bernaung di bawah Yayasan Padepokan Sekar Jagad Nusantara. Lembaga ini didirikan untuk membina mental spiritual bangsa melalui latihan pernapasan, meditasi, dan pengolahan potensi diri yang terarah.</p>
+                <p>Saat ini Sekar Jagad memiliki puluhan cabang dan divisi yang tersebar di berbagai wilayah Negara Kesatuan Republik Indonesia, serta anggota yang berdomisili di mancanegara. Setiap cabang menyelenggarakan latihan rutin di bawah bimbingan pelatih bersertifikat dari pengurus pusat.</p>
+                <p>Nama <strong>Sekar Jagad</strong> berarti “bunga dunia” — lambang keindahan yang mekar dari ketulusan hati, sebagaimana bunga teratai dan keris pada lambang lembaga: keteguhan prinsip yang berpadu dengan kelembutan budi.</p>
+              </div>
+            </div>
+
+            <div class="stats">
+              <div class="stat"><span class="num">48</span><span class="lbl">Cabang &amp; Divisi</span></div>
+              <div class="stat"><span class="num">12.500+</span><span class="lbl">Anggota Terdaftar</span></div>
+              <div class="stat"><span class="num">9</span><span class="lbl">Provinsi di Indonesia</span></div>
+              <div class="stat"><span class="num">2008</span><span class="lbl">Tahun Berdiri</span></div>
+            </div>
+          </section>
+
+          <!-- Tujuan -->
+          <section id="tujuan" style="margin-top:40px;">
+            <div class="section-head">
+              <h2>Tujuan Pendidikan Lembaga Sekar Jagad</h2>
+              <div class="rule"></div>
+            </div>
+            <ul class="tujuan">
+              <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Ikut serta mendidik generasi bangsa yang mempunyai mental tangguh, sehat jasmani dan rohani, serta berbudi pekerti luhur.</span></li>
+              <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Mendidik generasi muda agar memiliki kecintaan terhadap budaya bangsa dan Negara Kesatuan Republik Indonesia.</span></li>
+              <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Menciptakan generasi penerus bangsa yang memiliki daya cipta tinggi serta mampu mengembangkan potensi diri dengan berbagai kemampuannya.</span></li>
+              <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Membina kesehatan lahir dan batin melalui olah raga pernapasan dan meditasi yang teratur dan terukur.</span></li>
+              <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Mendidik mental spiritual bangsa agar tidak tersesat dalam kesesatan akal pikir manusia.</span></li>
+              <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Memberikan pemahaman rasa persatuan dan persaudaraan guna menciptakan kedamaian dan kerukunan sesama.</span></li>
+            </ul>
+          </section>
+        </div>
+
+        <!-- Sidebar -->
+        <aside>
+          <div class="side-card">
+            <h3>Update Terkini</h3>
+            <ul class="news-list">
+              <li><a href="#agenda"><img src="assets/img-94d5fff449.jpg" alt="" loading="lazy" /><span><span class="t">Ujian Kenaikan Tingkat Sekar Jagad Cabang Yogyakarta</span><span class="d">8 November 2026</span></span></a></li>
+              <li><a href="#agenda"><img src="assets/img-3a3d9e13db.jpg" alt="" loading="lazy" /><span><span class="t">Meditasi Fajar Bersama di Kawasan Borobudur</span><span class="d">2 November 2026</span></span></a></li>
+              <li><a href="#profil"><img src="assets/img-e555769979.jpg" alt="" loading="lazy" /><span><span class="t">Apa Pentingnya Meditasi? Saatnya Berhenti Sejenak</span><span class="d">27 Oktober 2026</span></span></a></li>
+              <li><a href="#pelatihan"><img src="assets/img-f2417f0558.jpg" alt="" loading="lazy" /><span><span class="t">Menghadapi Hari dengan Napas yang Tenang</span><span class="d">19 Oktober 2026</span></span></a></li>
+              <li><a href="#pengurus"><img src="assets/img-7a046748e6.jpg" alt="" /><span><span class="t">Sarasehan Pengurus Pusat: Menjaga Amanah, Menjaga Marwah</span><span class="d">11 Oktober 2026</span></span></a></li>
+              <li><a href="#agenda"><img src="assets/img-cdbeab2646.jpg" alt="" loading="lazy" /><span><span class="t">Latihan Gabungan Antar Cabang se-Jawa Tengah</span><span class="d">4 Oktober 2026</span></span></a></li>
+            </ul>
+          </div>
+
+          <div class="side-card">
+            <h3>Konsultasi Terbuka</h3>
+            <div class="side-body">
+              <p>Sesi konsultasi spiritual dan kesehatan pernapasan terbuka untuk anggota maupun masyarakat umum, setiap:</p>
+              <p><strong>Senin &amp; Kamis</strong><br />Pukul 19.30 – 21.30 WIB<br />Padepokan Pusat, Yogyakarta</p>
+              <a class="btn btn-maroon" href="#konsultasi" style="width:100%; justify-content:center;">Buat Janji Konsultasi</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- Tokoh / Pengurus -->
+    <div class="band">
+      <div class="wrap">
+        <section id="pengurus">
+          <div class="section-head center">
+            <h2>Para Tokoh Penting Sekar Jagad</h2>
+            <div class="rule"></div>
+          </div>
+          <div class="tokoh-grid">
+            <article class="tokoh">
+              <img src="assets/img-7a046748e6.jpg" alt="Lukisan potret Ki Ageng Sekar Wijaya, Guru Besar Sekar Jagad" />
+              <div class="meta"><span class="name">Ki Ageng Sekar Wijaya</span><span class="role">Guru Besar · Pendiri</span></div>
+            </article>
+            <article class="tokoh">
+              <img src="assets/img-eaf58e940b.jpg" alt="Lukisan potret R. Prasetyo Nugroho, Ketua Dewan Pembina Sekar Jagad" />
+              <div class="meta"><span class="name">R. Prasetyo Nugroho</span><span class="role">Ketua Dewan Pembina</span></div>
+            </article>
+            <article class="tokoh">
+              <img src="assets/img-3cde326e0e.jpg" alt="Lukisan potret Arya Dananjaya, Ketua Umum Sekar Jagad" />
+              <div class="meta"><span class="name">Arya Dananjaya</span><span class="role">Ketua Umum</span></div>
+            </article>
+            <article class="tokoh">
+              <img src="assets/img-2eeab4cc58.jpg" alt="Lukisan potret Ratna Wulan Sari, Sekretaris Jenderal Sekar Jagad" />
+              <div class="meta"><span class="name">Ratna Wulan Sari</span><span class="role">Sekretaris Jenderal</span></div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Pelatihan -->
+    <div class="wrap" style="padding-top:48px;">
+      <section id="pelatihan">
+        <div class="section-head">
+          <h2>Pelatihan &amp; Jenjang Pendidikan</h2>
+          <div class="rule"></div>
+        </div>
+        <div class="jenjang">
+          <article class="card">
+            <span class="tingkat">Tingkat I</span>
+            <h3>Dasar — Siswa</h3>
+            <p>Tahap awal pengenalan dan pembiasaan. Terbuka untuk umum, tanpa syarat pengalaman.</p>
+            <ul>
+              <li>Olah napas dasar &amp; pengaturan napas perut</li>
+              <li>Jurus dasar dan sikap pasang</li>
+              <li>Meditasi pemula dan penenangan batin</li>
+              <li>Pengenalan falsafah dan tata krama padepokan</li>
+            </ul>
+          </article>
+          <article class="card">
+            <span class="tingkat">Tingkat II</span>
+            <h3>Madya — Wira</h3>
+            <p>Pendalaman bagi siswa yang lulus ujian kenaikan tingkat pertama dan aktif berlatih minimal 6 bulan.</p>
+            <ul>
+              <li>Pendalaman napas segitiga dan penguncian energi</li>
+              <li>Jurus lanjutan dan latihan berpasangan</li>
+              <li>Meditasi terarah dan kontemplasi</li>
+              <li>Dasar-dasar penyembuhan diri (self healing)</li>
+            </ul>
+          </article>
+          <article class="card">
+            <span class="tingkat">Tingkat III</span>
+            <h3>Utama — Pandita</h3>
+            <p>Jenjang tertinggi: kaderisasi pelatih dan pembina cabang yang siap mengabdi kepada masyarakat.</p>
+            <ul>
+              <li>Penguasaan napas dan meditasi mendalam</li>
+              <li>Metodologi melatih dan membina siswa</li>
+              <li>Konsultasi dan pendampingan anggota</li>
+              <li>Pengabdian masyarakat melalui cabang</li>
+            </ul>
+          </article>
+        </div>
+
+        <table class="jadwal">
+          <caption>Jadwal Latihan Rutin — Padepokan Pusat</caption>
+          <thead>
+            <tr><th scope="col">Hari</th><th scope="col">Waktu (WIB)</th><th scope="col">Kegiatan</th><th scope="col">Peserta</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Senin &amp; Kamis</td><td>19.30 – 21.30</td><td>Latihan pernapasan &amp; jurus</td><td>Semua tingkat</td></tr>
+            <tr><td>Rabu</td><td>19.30 – 21.00</td><td>Meditasi terbimbing</td><td>Anggota &amp; tamu terdaftar</td></tr>
+            <tr><td>Sabtu</td><td>05.30 – 07.30</td><td>Olah napas fajar &amp; senam pernapasan</td><td>Semua tingkat</td></tr>
+            <tr><td>Minggu</td><td>08.00 – 10.00</td><td>Latihan gabungan &amp; sarasehan</td><td>Anggota dan keluarga</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Agenda -->
+      <section id="agenda" style="margin-top:52px;">
+        <div class="section-head">
+          <h2>Agenda Sekar Jagad</h2>
+          <div class="rule"></div>
+        </div>
+        <div class="agenda-grid">
+          <article class="agenda-card">
+            <div class="date"><span class="day">21</span><span class="mon">Nov 2026</span></div>
+            <div>
+              <h3>Ujian Kenaikan Tingkat — Cabang Yogyakarta</h3>
+              <p>Sabtu, 21 November 2026 · 08.00 WIB<br />Padepokan Pusat Sekar Jagad, Yogyakarta</p>
+            </div>
+          </article>
+          <article class="agenda-card">
+            <div class="date"><span class="day">12</span><span class="mon">Des 2026</span></div>
+            <div>
+              <h3>Sarasehan Akhir Tahun &amp; Doa Bersama</h3>
+              <p>Sabtu, 12 Desember 2026 · 19.00 WIB<br />Pendopo Agung Padepokan Pusat</p>
+            </div>
+          </article>
+          <article class="agenda-card">
+            <div class="date"><span class="day">09</span><span class="mon">Jan 2027</span></div>
+            <div>
+              <h3>Pembukaan Pelatihan Dasar Angkatan 42</h3>
+              <p>Sabtu, 9 Januari 2027 · 08.00 WIB<br />Pendaftaran dibuka hingga 31 Desember 2026</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Galeri -->
+      <section id="galeri" style="margin-top:52px;">
+        <div class="section-head">
+          <h2>Gallery Kegiatan</h2>
+          <div class="rule"></div>
+        </div>
+        <div class="gallery" id="gallery">
+          <figure role="button" tabindex="0" aria-label="Perbesar foto: Meditasi Fajar di Borobudur"><img src="assets/img-637dd2abd0.jpg" alt="Meditasi bersama menjelang fajar di kawasan Candi Borobudur" loading="lazy" /><figcaption>Meditasi Fajar di Borobudur</figcaption></figure>
+          <figure role="button" tabindex="0" aria-label="Perbesar foto: Latihan Pernapasan Pagi Hari"><img src="assets/img-94d5fff449.jpg" alt="Latihan pernapasan kelompok di alam terbuka pada pagi hari" loading="lazy" /><figcaption>Latihan Pernapasan Pagi Hari</figcaption></figure>
+          <figure role="button" tabindex="0" aria-label="Perbesar foto: Meditasi di Pelataran Candi"><img src="assets/img-3a3d9e13db.jpg" alt="Anggota bermeditasi di pelataran candi" loading="lazy" /><figcaption>Meditasi di Pelataran Candi</figcaption></figure>
+          <figure role="button" tabindex="0" aria-label="Perbesar foto: Borobudur di Kala Fajar"><img src="assets/img-cdbeab2646.jpg" alt="Candi Borobudur diselimuti kabut pagi keemasan" loading="lazy" /><figcaption>Borobudur di Kala Fajar</figcaption></figure>
+          <figure role="button" tabindex="0" aria-label="Perbesar foto: Meditasi Senja di Tepi Perairan"><img src="assets/img-f2417f0558.jpg" alt="Meditasi kelompok di anjungan tepi perairan saat senja" loading="lazy" /><figcaption>Meditasi Senja di Tepi Perairan</figcaption></figure>
+          <figure role="button" tabindex="0" aria-label="Perbesar foto: Latihan Gabungan Antar Cabang"><img src="assets/img-e555769979.jpg" alt="Latihan bersama membentuk lingkaran di lapangan hijau" loading="lazy" /><figcaption>Latihan Gabungan Antar Cabang</figcaption></figure>
+        </div>
+      </section>
+
+      <!-- Konsultasi & Pendaftaran -->
+      <section id="konsultasi" style="margin-top:52px;">
+        <div class="section-head">
+          <h2>Konsultasi &amp; Pendaftaran Anggota</h2>
+          <div class="rule"></div>
+        </div>
+        <div class="konsul">
+          <div class="info">
+            <p>Sekar Jagad membuka layanan <strong>konsultasi spiritual dan pernapasan</strong> bagi masyarakat umum, serta <strong>pendaftaran anggota baru</strong> untuk angkatan pelatihan dasar berikutnya. Silakan isi formulir di samping — pesan Anda akan diteruskan ke sekretariat melalui WhatsApp.</p>
+            <ul class="kontak-list">
+              <li>
+                <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span><strong>Padepokan Pusat</strong><br />Jl. Padepokan No. 88, Sleman, Daerah Istimewa Yogyakarta</span>
+              </li>
+              <li>
+                <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+                <span><strong>Sekretariat (WhatsApp)</strong><br />0812-3456-7890 · Senin–Sabtu, 08.00–20.00 WIB</span>
+              </li>
+              <li>
+                <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+                <span><strong>Email</strong><br />sekretariat@sekarjagad.or.id</span>
+              </li>
+            </ul>
+          </div>
+
+          <form class="daftar" id="daftar">
+            <div class="field">
+              <label for="f-nama">Nama Lengkap</label>
+              <input id="f-nama" name="nama" type="text" required autocomplete="name" placeholder="Nama Anda" />
+            </div>
+            <div class="field">
+              <label for="f-wa">Nomor WhatsApp</label>
+              <input id="f-wa" name="wa" type="tel" required autocomplete="tel" placeholder="08xxxxxxxxxx" />
+            </div>
+            <div class="field">
+              <label for="f-keperluan">Keperluan</label>
+              <select id="f-keperluan" name="keperluan">
+                <option>Daftar Jadi Anggota Baru</option>
+                <option>Konsultasi Spiritual</option>
+                <option>Konsultasi Kesehatan Pernapasan</option>
+                <option>Informasi Pelatihan</option>
+                <option>Lainnya</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-pesan">Pesan</label>
+              <textarea id="f-pesan" name="pesan" placeholder="Tuliskan keperluan Anda secara singkat…"></textarea>
+            </div>
+            <button class="btn btn-gold" type="submit" style="width:100%; justify-content:center;">Kirim via WhatsApp</button>
+            <p class="form-note">Formulir ini membuka WhatsApp dengan pesan yang sudah terisi otomatis, ditujukan ke sekretariat Sekar Jagad. Anda dapat memeriksa dan mengubah isi pesan sebelum mengirim.</p>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="wrap">
+        <div class="cols">
+          <div>
+            <h3>Sekar Jagad</h3>
+            <p style="margin:0;">Lembaga Pendidikan Ilmu Spiritual &amp; Olah Raga Pernapasan yang membina mental, kesehatan, dan budi pekerti generasi bangsa sejak 2008.</p>
+          </div>
+          <div>
+            <h3>Menu</h3>
+            <ul>
+              <li><a href="#profil">Profil Lembaga</a></li>
+              <li><a href="#pengurus">Pengurus Pusat</a></li>
+              <li><a href="#pelatihan">Pelatihan</a></li>
+              <li><a href="#agenda">Agenda</a></li>
+              <li><a href="#galeri">Gallery</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Kontak</h3>
+            <ul>
+              <li>Jl. Padepokan No. 88, Sleman, Yogyakarta</li>
+              <li>WhatsApp: 0812-3456-7890</li>
+              <li>sekretariat@sekarjagad.or.id</li>
+            </ul>
+          </div>
+        </div>
+        <div class="bottom">
+          <span>© 2026 Lembaga Sekar Jagad. Hak cipta dilindungi undang-undang.</span>
+          <span>Website contoh (demo) — nama, foto tokoh, dan data kontak masih contoh dan dapat disesuaikan.</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Tombol WhatsApp melayang -->
+    <a class="wa-float" href="https://wa.me/6281234567890?text=Assalamu%27alaikum%2C%20saya%20ingin%20bertanya%20tentang%20Lembaga%20Sekar%20Jagad." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.47-1.76-1.64-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.82 9.82 0 1 1 8.38 4.63zm8.34-18.1A11.82 11.82 0 0 0 12.04 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.55-8.41z"/></svg>
+      <span class="wa-text">Ada yang bisa kami bantu?</span>
+    </a>
+
+    <!-- Lightbox galeri -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto galeri diperbesar">
+      <button id="lightboxClose" aria-label="Tutup foto">&times;</button>
+      <img id="lightboxImg" src="assets/img-637dd2abd0.jpg" alt="" />
+      <p class="cap" id="lightboxCap"></p>
+    </div>
+
+    <script>
+      // Menu mobile
+      var navbar = document.getElementById('navbar');
+      var toggle = document.getElementById('navToggle');
+      toggle.addEventListener('click', function () {
+        var open = navbar.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      document.querySelectorAll('.nav-links a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          navbar.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // Tandai menu aktif sesuai posisi gulir
+      var sections = ['home', 'profil', 'pengurus', 'pelatihan', 'agenda', 'galeri', 'konsultasi'];
+      var linkById = {};
+      document.querySelectorAll('.nav-links a').forEach(function (a) {
+        linkById[a.getAttribute('href').slice(1)] = a;
+      });
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            document.querySelectorAll('.nav-links a').forEach(function (a) { a.classList.remove('active'); });
+            var link = linkById[entry.target.id];
+            if (link) link.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-40% 0px -55% 0px' });
+      sections.forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) observer.observe(el);
+      });
+
+      // Lightbox galeri
+      var lightbox = document.getElementById('lightbox');
+      var lbImg = document.getElementById('lightboxImg');
+      var lbCap = document.getElementById('lightboxCap');
+      document.querySelectorAll('#gallery figure').forEach(function (fig) {
+        function openFig() {
+          var img = fig.querySelector('img');
+          lbImg.src = img.src;
+          lbImg.alt = img.alt;
+          lbCap.textContent = fig.querySelector('figcaption').textContent;
+          lightbox.classList.add('open');
+        }
+        fig.addEventListener('click', openFig);
+        fig.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openFig(); }
+        });
+      });
+      function closeLightbox() { lightbox.classList.remove('open'); lbImg.src = ''; }
+      document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', function (e) { if (e.target === lightbox) closeLightbox(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLightbox(); });
+
+      // Formulir -> WhatsApp sekretariat
+      var WA_NUMBER = '6281234567890';
+      document.getElementById('daftar').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var nama = document.getElementById('f-nama').value.trim();
+        var wa = document.getElementById('f-wa').value.trim();
+        var keperluan = document.getElementById('f-keperluan').value;
+        var pesan = document.getElementById('f-pesan').value.trim();
+        var lines = [
+          "Assalamu'alaikum, saya ingin menghubungi Sekretariat Sekar Jagad.",
+          '',
+          'Nama: ' + nama,
+          'WhatsApp: ' + wa,
+          'Keperluan: ' + keperluan
+        ];
+        if (pesan) lines.push('Pesan: ' + pesan);
+        var url = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(lines.join('\n'));
+        window.open(url, '_blank', 'noopener');
+      });
+    </script>
+  </body>
+</html>
